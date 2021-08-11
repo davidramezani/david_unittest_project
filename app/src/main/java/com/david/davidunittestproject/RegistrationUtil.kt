@@ -2,7 +2,7 @@ package com.david.davidunittestproject
 
 object RegistrationUtil {
 
-    private val existingUsers = listOf("peter", "carl")
+    private val existingUsers = listOf("Peter", "Carl")
 
     /**
      * the input is not valid if ...
@@ -18,7 +18,7 @@ object RegistrationUtil {
         password: String,
         confirmedPassword: String
     ): Boolean {
-        return false
+        return true
     }
 
 }
