@@ -18,6 +18,19 @@ object RegistrationUtil {
         password: String,
         confirmedPassword: String
     ): Boolean {
+        if(username.isEmpty()) return false
+        if(password.isEmpty()) return false
+        if(password != confirmedPassword) return false
+
+        val regEx = Regex("^.*[0-9]{2}\$")
+        if(!password.contains(regEx)) return false
+
+        if(password.count { it.isDigit() } < 2) {
+            return false
+        }
+
+        if(existingUsers.contains(username)) return false
+
         return true
     }
 
